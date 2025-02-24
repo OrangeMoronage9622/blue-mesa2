@@ -1,25 +1,25 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Amber
-  - Atlas
+  #- Amber # BlueMesa2 - It's mid as fuck
+  - Atlas # I can not for the life of me find the fucking map file for this map. Mapvote will be a bitch
   - Bagel
   - Box
-  - Cluster
+  #- Cluster # BlueMesa2 - It's mid as fuck
   #- Cog # Goobstation - cog is broken
-  - Core
-  - Fland
-  - Marathon
+  #- Core # BlueMesa2 - It's mid as fuck
+  #- Fland # BlueMesa2 - Actually based but massive
+  #- Marathon # BlueMesa2 - It's fine but I want limited maps
   - Meta
-  - Oasis
-  - Omega
-  - Origin
-  - Saltern
-  - Packed
-  #- Reach # funkystation - operation revive lrp
+  - Oasis #Underrated to fuck.
+  #- Omega # BlueMesa2 - It's mid as fuck
+  #- Origin # BlueMesa2 - Way too fucking big
+  #- Saltern # BlueMesa2 - It's fine but I want limited maps
+  #- Packed
+  - Reach
   - roid_outpost
   #- Train - Train is pain
-  - FlandHighPop
+  #- FlandHighPop # BlueMesa2 - It's fine but I want limited maps
   - OasisHighPop
   #- Barratry # Goobstation - Re-add barratry - Funkystation - Barratrauma
-  - Kettle
+  #- Kettle # BlueMesa2 - It's mid as fuck
