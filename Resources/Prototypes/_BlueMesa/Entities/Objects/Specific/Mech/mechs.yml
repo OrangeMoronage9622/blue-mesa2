@@ -1,0 +1,110 @@
+- type: entity
+  id: MechPod
+  parent: BaseMech
+  name: Space Pod
+  description: A small, highly modular space exploration vessel. These were developed by Nanotrasen for private personnel (and eventually sold with marked up prices) to evaluate local space fauna and structures, and potentially other uses, like repair.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: false
+    sprite: _BlueMesa/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: podsmall1
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: null
+  - type: Mech
+    baseState: podsmall1
+    openState: podsmall1-open
+    brokenState: podsmall1-broken
+    mechToPilotDamageMultiplier: 0.75
+    maxEquipmentAmount: 0
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+    weightlessAcceleration: 2.5
+    weightlessFriction: 1
+    weightlessModifier: 1.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 1 #They're not supposed to fight!
+    soundHit:
+      path: "/Audio/Weapons/egloves.ogg"
+
+- type: entity
+  parent: MechPod
+  id: MechPodBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechPodCombatSyndie
+  parent: [ MechPod, CombatMech, BaseSyndicateContraband ]
+  name: Syndicate Combat Pod
+  description: A small, highly modular space combat vessel made by the Syndicate. These appear to be used by the Syndicate for various operations.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: false
+    sprite: _BlueMesa/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: podsmallsyndie1
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: Mech
+    baseState: podsmallsyndie1
+    openState: podsmallsyndie1-open
+    brokenState: podsmallsyndie1-broken
+    mechToPilotDamageMultiplier: 0.5
+    maxEquipmentAmount: 2
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 2.5
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    weightlessModifier: 1.5
+  - type: Damageable
+    damageModifierSet: MediumArmorSyndi
+
+- type: entity
+  parent: MechPodCombatSyndie
+  id: MechPodCombatSyndieBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  parent: MechPodCombatSyndieBattery
+  id: MechPodCombatSyndieFilled
+  suffix: Battery, Filled
+  components:
+  - type: Mech
+    startingEquipment:
+      - WeaponMechCombatFiredartLaser
+      - WeaponMechCombatUltraRifle
