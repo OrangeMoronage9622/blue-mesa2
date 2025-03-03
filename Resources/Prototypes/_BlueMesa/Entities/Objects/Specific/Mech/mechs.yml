@@ -17,7 +17,7 @@
     #  visible: false
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: FootstepBorg
+      collection: null
   - type: Mech
     baseState: podsmall1
     openState: podsmall1-open
