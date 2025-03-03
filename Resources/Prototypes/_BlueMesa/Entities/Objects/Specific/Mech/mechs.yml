@@ -1,0 +1,62 @@
+- type: entity
+  id: MechPod
+  parent: BaseMech
+  name: Space Pod
+  description: A small, highly modular space exploration vessel. These were developed by Nanotrasen for private personnel (and eventually sold with marked up prices) to evaluate local space fauna and structures, and potentially other uses, like repair.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: false
+    sprite: _BlueMesa/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: podsmall1
+    #- map: [ "enum.MechVisualLayers.Light" ]
+    #  state: podsmall1-light-overlay
+    #  shader: unshaded
+    #  visible: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: Mech
+    baseState: podsmall1
+    openState: podsmall1-open
+    brokenState: podsmall1-broken
+    mechToPilotDamageMultiplier: 0.75
+    maxEquipmentAmount: 0
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+    weightlessAcceleration: 2.5
+    weightlessFriction: 1
+    weightlessModifier: 1.5
+  - type: CanMoveInAir
+  #- type: GasTank
+  #  outputPressure: 21.3
+  #  air:
+  #    volume: 5
+  #    temperature: 293.15
+  - type: Jetpack
+  #  #moleUsage: 0.00085
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 1 #They're not supposed to fight!
+    soundHit:
+      path: "/Audio/Weapons/egloves.ogg"
+
+- type: entity
+  parent: MechPod
+  id: MechPodBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh

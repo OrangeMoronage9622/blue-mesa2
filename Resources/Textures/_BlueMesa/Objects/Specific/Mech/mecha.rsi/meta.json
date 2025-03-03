@@ -1,0 +1,23 @@
+{
+  "copyright" : "podsmall1, podsmall1-open, and podsmall1-broken taken from tgstation at commit https://github.com/mc-oofert/tgstation/commit/cfec96798174e48cebcaa909407d2abb763a3265, with podsmall1 and podsmall1-broken modified by Merrokitsune for Blue Mesa.",
+  "license" : "CC-BY-SA-3.0",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "podsmall1"
+    },
+    {
+      "name": "podsmall1-broken"
+    },
+    {
+      "name": "podsmall1-open"
+    },
+    {
+      "name": "icon"
+    }
+  ]
+}
