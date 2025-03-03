@@ -11,10 +11,9 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: podsmall1
-    #- map: [ "enum.MechVisualLayers.Light" ]
-    #  state: podsmall1-light-overlay
-    #  shader: unshaded
-    #  visible: false
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
   - type: FootstepModifier
     footstepSoundCollection:
       collection: null
@@ -35,13 +34,7 @@
     weightlessFriction: 1
     weightlessModifier: 1.5
   - type: CanMoveInAir
-  #- type: GasTank
-  #  outputPressure: 21.3
-  #  air:
-  #    volume: 5
-  #    temperature: 293.15
-  - type: Jetpack
-  #  #moleUsage: 0.00085
+  - type: MovementAlwaysTouching
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -60,3 +53,58 @@
     containers:
       mech-battery-slot:
       - PowerCellHigh
+
+- type: entity
+  id: MechPodCombatSyndie
+  parent: [ MechPod, CombatMech, BaseSyndicateContraband ]
+  name: Syndicate Combat Pod
+  description: A small, highly modular space combat vessel made by the Syndicate. These appear to be used by the Syndicate for various operations.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: false
+    sprite: _BlueMesa/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: podsmallsyndie1
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: Mech
+    baseState: podsmallsyndie1
+    openState: podsmallsyndie1-open
+    brokenState: podsmallsyndie1-broken
+    mechToPilotDamageMultiplier: 0.5
+    maxEquipmentAmount: 2
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 2.5
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    weightlessModifier: 1.5
+  - type: Damageable
+    damageModifierSet: MediumArmorSyndi
+
+- type: entity
+  parent: MechPodCombatSyndie
+  id: MechPodCombatSyndieBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  parent: MechPodCombatSyndieBattery
+  id: MechPodCombatSyndieFilled
+  suffix: Battery, Filled
+  components:
+  - type: Mech
+    startingEquipment:
+      - WeaponMechCombatFiredartLaser
+      - WeaponMechCombatUltraRifle
