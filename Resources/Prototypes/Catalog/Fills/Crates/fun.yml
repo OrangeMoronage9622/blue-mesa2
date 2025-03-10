@@ -44,6 +44,7 @@
     - id: PlushieDawn
     - id: PlushieCirno
     - id: PlushieAshleyTickum
+    - id: PlushieAuroraWise # Blue Mesa
 
 - type: entity
   id: CrateFunPlushie

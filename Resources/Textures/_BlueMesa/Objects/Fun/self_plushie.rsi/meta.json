@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "plushie_aurorawise by Merrokitsune, based on 'Aurora Wise' character by Merrokitsune.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "plushie_aurorawise"
+        }
+    ]
+}

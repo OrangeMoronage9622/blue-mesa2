@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseSelfPlushie
+  id: PlushieAuroraWise
+  name: grey cat plushie
+  description: This plushie does not have a credible origin, but appears to bear the likeness of someone. There's a tag on it, but it just says "Grey Cat" and an ID number.
+  components:
+  - type: Sprite
+    state: plushie_aurorawise
+    sprite: _BlueMesa/Objects/Fun/self_plushie.rsi
+  - type: SpeakOnUse
+    pack: SelfPlushAuroraWise
+  - type: EmitSoundOnUse
+    sound:
+      collection: FelinidMews
+  - type: EmitSoundOnLand
+    sound:
+      collection: FelinidScreams
+  - type: EmitSoundOnActivate
+    sound:
+      collection: FelinidMews
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: FelinidMews
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      collection: FelinidScreams
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: FelinidMeows
+  - type: Speech
+    speechVerb: Felinid
+  - type: UseDelay
+    delay: 1

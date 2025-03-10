@@ -374,6 +374,8 @@
         orGroup: GiftPool
       - id: PlushieCirno
         orGroup: GiftPool
+      - id: PlushieAuroraWise # Blue Mesa
+        orGroup: GiftPool # Blue Mesa
     sound:
       path: /Audio/Effects/unwrap.ogg
 
