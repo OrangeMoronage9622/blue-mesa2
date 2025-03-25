@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: SelfPlushAuroraWise
+  values:
+    prefix: selfplush-aurorawise-
+    count: 3
